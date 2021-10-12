@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Http\Request;
 
-class StudentsController extends Controller
+class StudentController extends Controller
 {
-    //
+    public function index(student $student)
+    {
+        return $student->get();
+    }
 }

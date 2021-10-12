@@ -14,4 +14,12 @@
 
 Route::get('/users', 'UserController@index');
 
+Route::get('/students', 'StudentController@index');
+
+Route::get('/subjects', 'SubjectController@index');
+
+Route::get('/interviews', 'InterviewController@index');
+
+
+
 
