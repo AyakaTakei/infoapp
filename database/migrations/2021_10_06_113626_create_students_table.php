@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('school')->nullable();
             $table->string('grade')->nullable();
             $table->string('firstchoice')->nullable();
+            $table->timestamps();
         });
     }
 

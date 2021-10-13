@@ -11,27 +11,26 @@
 |
 */
 
+Auth::routes();
 
-Route::get('/users', 'UserController@index');
+Route::group(['middleware' => ['auth']], function () {
+    //
+    Route::get('/users', 'UserController@index');
+    
+    Route::get('/subjects', 'SubjectController@index');
+    
+    Route::get('/interviews', 'InterviewController@index');
+    
+    Route::get('/students/home', function(){
+        return view('Students.home');
+    });
+    Route::get('/students/index', 'StudentController@index');
+    Route::get('/students/create', 'StudentController@create');
+    Route::get('/students/{student}', 'StudentController@show');
+    Route::get('/students/{student}/edit', 'StudentController@edit');
+    Route::put('/students/{student}', 'StudentController@update');
+    Route::post('/students', 'StudentController@store');
 
-Route::get('/', 'StudentController@index');
-
-Route::get('/subjects', 'SubjectController@index');
-
-Route::get('/interviews', 'InterviewController@index');
-
-Route::get('/students/home', 'StudentController@home', function(){
-  return view("Students.home");
 });
 
-Route::get('/students/index', 'StudentController@index', function() {
-    return view("Students.index");
-});
-
-Route::get('/students/create', 'StudentController@create', function() {
-    return view("Students.create");
-});
-
-Route::get('/students/{student}', 'StudentController@show', function() {
-    return view("Students.show");
-});
+Route::get('/home', 'HomeController@index')->name('home');

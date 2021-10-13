@@ -22,6 +22,7 @@ class CreateInterviewsTable extends Migration
             $table->string('content_study')->nullable();
             $table->string('content_life')->nullable();
             $table->date('interview_date')->nullable();
+            $table->timestamps();
         });
     }
 
