@@ -19,8 +19,9 @@ class StudentController extends Controller
     
     public function show(Student $student)
     {
-        return view('Students.show')->with(['student' => $student]);
+        return view('Students.show')->with(['student' => $student, 'interviews' =>$student->interviews, 'users' =>$student->users]);
     }
+    
     
     public function edit(Student $student)
     {
@@ -41,4 +42,5 @@ class StudentController extends Controller
         $student->fill($input)->save();
         return redirect('/students/' . $student->id);
     }
+    
 }

@@ -13,4 +13,13 @@ class Student extends Model
         'firstchoice',
     ];
     
+    public function interviews()
+    {
+        return $this ->hasMany('App\Interview');
+    }
+    
+    public function users()
+    {
+        return $this ->belongsToMany('App\User');
+    }
 }

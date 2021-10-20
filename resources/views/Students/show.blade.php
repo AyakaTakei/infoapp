@@ -10,16 +10,29 @@
                 <p>{{ $student->school }}</p>
                 <h3>学年</h3>
                 <p>{{ $student->grade }}</p>
-                <h3>教科</h3>
-                <p>未定</p>
-                <h3>担当者</h3>
-                <p>未定</p>
+                <h3>教科(担当者)</h3>
+                @foreach($student->users as $user)
+                    <p>{{ $user->subject}}  ( {{ $user->name}} )</p>
+                @endforeach
                 <h3>志望校</h3>
                 <p>{{ $student->firstchoice }}</p>
             </div>
         </div>
         <p class="edit">[<a href="/students/{{ $student->id }}/edit">編集</a>]</p>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/students/index">戻る</a>
         </div>
+        
+        
+        
+        <h2>生徒面談記録一覧</h2>
+        <div class='interviews'>
+            @foreach ($interviews as $interview)
+                <div class='interview'>
+                    <h3><a href="/students/{{ $interview->id }}/interviews">{{ $interview->interview_date }}</a>
+                </div>
+            @endforeach
+        </div>
+        //面談一覧を書く（indexを参考に）
+        
 @endsection

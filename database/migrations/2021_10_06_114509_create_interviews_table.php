@@ -19,8 +19,7 @@ class CreateInterviewsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->unsignedBigInteger('student_id')->nullable();
             $table->foreign('student_id')->references('id')->on('students')->nullable();
-            $table->string('content_study')->nullable();
-            $table->string('content_life')->nullable();
+            $table->string('content')->nullable();
             $table->date('interview_date')->nullable();
             $table->timestamps();
         });

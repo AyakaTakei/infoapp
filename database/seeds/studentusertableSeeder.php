@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class subjectstableSeeder extends Seeder
+class studentusertableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class subjectstableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('subjects')->insert([
+         DB::table('student_user')->insert([
             [
                 'id'=>'1',
                 'user_id'=>'1',

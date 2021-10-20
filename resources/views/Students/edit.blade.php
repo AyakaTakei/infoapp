@@ -33,7 +33,7 @@
             </div>
             <input type="submit" value="保存">
             <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/students/{{ $student->id}}">戻る</a>
         </div>
         </form>
     </div>
