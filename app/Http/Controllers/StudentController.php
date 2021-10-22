@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
     public function index(Student $student)
     {
-        return view('Students.index')->with(['students' => $student->get()]);
+        $user = Auth::user();
+        $id = Auth::id();
+        
+        return view('Students.index')->with(['students' => $student= $user->students]);
     }
     
     public function create(Student $student)
