@@ -12,8 +12,5 @@
                     <p class='grade'>{{ $student->grade }}</p>
                 </div>
             @endforeach
-            
-            
-            
         </div>
 @endsection

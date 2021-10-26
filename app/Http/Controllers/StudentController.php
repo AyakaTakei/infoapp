@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StudentRequest;
 
 class StudentController extends Controller
 {
@@ -16,9 +18,9 @@ class StudentController extends Controller
         return view('Students.index')->with(['students' => $student= $user->students]);
     }
     
-    public function create(Student $student)
+    public function create(Student $student, User $user)
     {
-        return view('Students.create');
+        return view('Students.create')->with(['users' => $user->get() ]);
     }
     
     public function show(Student $student)
@@ -32,7 +34,7 @@ class StudentController extends Controller
         return view('Students.edit')->with(['student' => $student]);
     }
     
-    public function update(Request $request, Student $student)
+    public function update(StudentRequest $request, Student $student)
     {
         $input = $request['student'];
         $student->fill($input)->save();
@@ -40,10 +42,12 @@ class StudentController extends Controller
         return redirect('/students/' . $student->id);
     }
     
-    public function store(Request $request, Student $student)
+    public function store(StudentRequest $request, Student $student)
     {
         $input = $request['student'];
         $student->fill($input)->save();
+        $user = User::find($request['user_id']);
+        $user->students()->attach($student->id);
         return redirect('/students/' . $student->id);
     }
     

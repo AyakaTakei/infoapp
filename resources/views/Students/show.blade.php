@@ -33,6 +33,4 @@
                 </div>
             @endforeach
         </div>
-        //面談一覧を書く（indexを参考に）
-        
 @endsection

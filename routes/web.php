@@ -21,7 +21,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/interviews', 'InterviewController@index');
     
-    Route::get('/students/home', function(){
+    Route::get('/', function(){
         return view('Students.home');
     });
     Route::get('/students/index', 'StudentController@index');
@@ -30,6 +30,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/students/{student}/edit', 'StudentController@edit');
     Route::put('/students/{student}', 'StudentController@update');
     Route::post('/students', 'StudentController@store');
+    Route::get('/students/{interview}/interviews', 'InterviewController@show');
+    Route::get('/interviews/{interview}/edit', 'InterviewController@edit');
+    Route::put('/interviews/{interview}', 'InterviewController@update');
+    Route::post('/students/{student}/interviews', 'InterviewController@store');
 
 });
 
