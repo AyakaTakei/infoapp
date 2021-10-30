@@ -19,6 +19,6 @@
             志望校：<br>
             <textarea name="student[firstchoice]"></textarea><br>
             <input class="btn btn-primary" type="submit" value="登録">
-            <a class="btn btn-primary" href="/students/index" role="button">戻る</a>
+            <a class="btn btn-primary" href="{{ route('student_index')}}" role="button">戻る</a>
         </form>
 @endsection

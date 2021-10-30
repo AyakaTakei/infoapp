@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        [<a href='/students/index'>担当生徒一覧</a>]
-        <h4>生徒検索</h4>
+        <h1>Home</h1>
+        <a class="btn btn-primary" href="/students/index" role="button">担当生徒一覧</a>
+        <a class="btn btn-primary" href="" role="button">全生徒一覧</a>
 @endsection

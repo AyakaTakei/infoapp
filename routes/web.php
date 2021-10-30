@@ -21,10 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/interviews', 'InterviewController@index');
     
-    Route::get('/', function(){
-        return view('Students.home');
-    });
-    Route::get('/students/index', 'StudentController@index');
+    Route::get('/', 'StudentController@index')->name('student_index');
+    //Route::get('/students/index', 'StudentController@index');
     Route::get('/students/create', 'StudentController@create');
     Route::get('/students/{student}', 'StudentController@show');
     Route::get('/students/{student}/edit', 'StudentController@edit');
