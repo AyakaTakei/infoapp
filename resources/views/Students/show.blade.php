@@ -12,7 +12,7 @@
                 <p>{{ $student->grade }}</p>
                 <h3>教科(担当者)</h3>
                 @foreach($student->users as $user)
-                    <p>{{ $user->subject}}  ( {{ $user->name}} )</p>
+                    <p>{{ $user->subject}}  ( {{ $user->name }} )</p>
                 @endforeach
                 <h3>志望校</h3>
                 <p>{{ $student->firstchoice }}</p>
@@ -33,4 +33,5 @@
                 </div>
             @endforeach
         </div>
+        [<a href='/interviews/{{ $student->id }}/create'>新規作成</a>]
 @endsection

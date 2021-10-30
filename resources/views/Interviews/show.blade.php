@@ -14,7 +14,7 @@
         </div>
         <p class="edit">[<a href="/interviews/{{ $interview->student->id }}/edit">編集</a>]</p>
         <div class="footer">
-            <a href="/students/index">戻る</a>
+            <a href="/students/{{ $student->id }}">戻る</a>
         </div>
         
 @endsection

@@ -33,8 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/students/{interview}/interviews', 'InterviewController@show');
     Route::get('/interviews/{interview}/edit', 'InterviewController@edit');
     Route::put('/interviews/{interview}', 'InterviewController@update');
+     Route::get('/interviews/{student}/create', 'InterviewController@create');
     Route::post('/students/{student}/interviews', 'InterviewController@store');
-
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');
