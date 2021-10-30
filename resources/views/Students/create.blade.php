@@ -18,7 +18,7 @@
             </select><br>
             志望校：<br>
             <textarea name="student[firstchoice]"></textarea><br>
-            <input type="submit" value="登録"/>
+            <input class="btn btn-primary" type="submit" value="登録">
+            <a class="btn btn-primary" href="/students/index" role="button">戻る</a>
         </form>
-        <div class="back">[<a href="/students/index">戻る</a>]</div>
 @endsection

@@ -12,9 +12,6 @@
                 <p>{{ $interview->content }}</p>
             </div>
         </div>
-        <p class="edit">[<a href="/interviews/{{ $interview->student->id }}/edit">編集</a>]</p>
-        <div class="footer">
-            <a href="/students/{{ $student->id }}">戻る</a>
-        </div>
-        
+        <a class="btn btn-primary" href="/interviews/{{ $interview->student->id }}/edit" role="button">編集</a>
+        <a class="btn btn-primary" href="/students/{{ $student->id }}" role="button">戻る</a>
 @endsection

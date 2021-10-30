@@ -2,7 +2,6 @@
 
 @section('content')
         <h2>担当生徒一覧</h2>
-        [<a href='/students/create'>新規生徒追加</a>]
         <div class='students'>
             @foreach ($students as $student)
                 </div>
@@ -12,5 +11,6 @@
                 </div>
             @endforeach
         </div>
-         <a href="/">戻る</a>
+        <a class="btn btn-primary" href="/students/create" role="button">新規生徒追加</a>
+        <a class="btn btn-primary" href="/" role="button">戻る</a>
 @endsection

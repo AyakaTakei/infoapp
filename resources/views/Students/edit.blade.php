@@ -39,10 +39,8 @@
                 <h2>志望校</h2>
                 <input type='text' name='student[firstchoice]' value="{{ $student->firstchoice }}">
             </div>
-            <input type="submit" value="保存">
-            <div class="footer">
-            <a href="/students/{{ $student->id}}">戻る</a>
-        </div>
+            <input class="btn btn-primary" type="submit" value="保存">
+            <a class="btn btn-primary" href="/students/{{ $student->id}}" role="button">戻る</a>
         </form>
     </div>
 @endsection

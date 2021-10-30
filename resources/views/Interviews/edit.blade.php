@@ -23,10 +23,8 @@
                 <h2>面談内容</h2>
                 <input type='text' name='interview[content]' value="{{ $interview->content }}">
             </div>
-            <input type="submit" value="保存">
-            <div class="footer">
-            <a href="/students/{{ $interview->id }}/interviews">戻る</a>
-        </div>
+            <input class="btn btn-primary" type="submit" value="保存">
+            <a class="btn btn-primary" href="/students/{{ $interview->id }}/interviews" role="button">戻る</a>
         </form>
     </div>
 @endsection
