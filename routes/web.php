@@ -21,6 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/interviews', 'InterviewController@index');
     
+    Route::get('/students/list', 'StudentController@lists');
+    
     Route::get('/', 'StudentController@index')->name('student_index');
     //Route::get('/students/index', 'StudentController@index');
     Route::get('/students/create', 'StudentController@create');
@@ -31,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/students/{interview}/interviews', 'InterviewController@show');
     Route::get('/interviews/{interview}/edit', 'InterviewController@edit');
     Route::put('/interviews/{interview}', 'InterviewController@update');
-     Route::get('/interviews/{student}/create', 'InterviewController@create');
+    Route::get('/interviews/{student}/create', 'InterviewController@create');
     Route::post('/students/{student}/interviews', 'InterviewController@store');
 });
 

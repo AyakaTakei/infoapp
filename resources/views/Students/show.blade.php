@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="name">
-        {{ $student->name }}
-    </h1>
-    
     <div class="container">
+        <div class=mb-4>
+            <h2 class="name">
+            {{ $student->name }}
+            </h2>
+        </div>
         <div class="row">
             <div class="col-md-6">
-                <h2>生徒基本情報</h2>
+                <div class=mb-4>
+                    <h3>生徒基本情報</h3>
+                </div>
                 <div class="information row">
                     <div class="col-md-5">
                         <h4>学校名</h3>
@@ -25,11 +28,19 @@
                         <h4>{{ $student->firstchoice }}</h4>
                     </div>
                 </div>
-                <a class="btn btn-primary" href="/students/{{ $student->id }}/edit" role="button">編集</a>
+                <div class=mt-3>
+                    <a class="btn btn-primary" href="/students/{{ $student->id }}/edit" role="button">編集</a>
+                </div>
+                <div class=mt-3>
+                    <a class="btn btn-primary" href="{{ route('student_index')}}" role="button">担当生徒一覧に戻る</a>
+                    <a class="btn btn-primary" href="/students/list" role="button">全生徒一覧に戻る</a>
+                </div>
             </div>
         
             <div class="cok-md-6">
-                <h2>生徒面談記録一覧</h2>
+                <div class=mb-2>
+                    <h3>生徒面談記録一覧</h3>
+                </div>
                 <div class='interviews'>
                     <table class="table">
                         <thead>
@@ -49,7 +60,6 @@
                     </table>
                 </div>
                 <a class="btn btn-primary" href="/interviews/{{ $student->id }}/create" role="button">新規作成</a>
-                <a class="btn btn-primary" href="{{ route('student_index')}}" role="button">戻る</a>
             </div>
         </div>
     </div>

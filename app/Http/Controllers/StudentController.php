@@ -51,4 +51,9 @@ class StudentController extends Controller
         return redirect('/students/' . $student->id);
     }
     
+    public function lists(Student $student)
+    {
+        return view('list')->with(['students' => $student->get() ]);
+    }
+    
 }

@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="title">面談情報編集</h1>
+<div class=container>
+    <div class=mb-4>
+        <h1 class="title">面談情報編集</h1>
+    </div>
     <div class="content">
         <form action="/interviews/{{ $interview->id }}" method="POST">
             @csrf
@@ -20,11 +23,14 @@
                 <p>{{ $interview->interview_date }}</p>
             </div>
             <div class='content'>
-                <h2>面談内容</h2>
-                <input type='text' name='interview[content]' value="{{ $interview->content }}">
+                <h3>面談内容</h3>
+                <textarea cols="60" rows="10" name="interview[content]"　value="{{ $interview->content }}">{{ $interview->content}}</textarea>
             </div>
-            <input class="btn btn-primary" type="submit" value="保存">
-            <a class="btn btn-primary" href="/students/{{ $interview->id }}/interviews" role="button">戻る</a>
+            <div class=mt-4>
+                <input class="btn btn-primary" type="submit" value="保存">
+                <a class="btn btn-primary" href="/students/{{ $interview->id }}/interviews" role="button">戻る</a>
+            </div>
         </form>
     </div>
+</div>
 @endsection
